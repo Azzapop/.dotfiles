@@ -1,6 +1,7 @@
 brew install fortune
 brew install postgres
 
+brew install python3
 pip3 install thefuck
 
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
