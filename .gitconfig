@@ -1,0 +1,9 @@
+[user]
+	name = Azzapop
+	email = aaron.b.hook@gmail.com
+[core]
+	excludesfile = /Users/Aaron/.gitignore_global
+	editor = /usr/bin/vim
+[push]
+	defult = simple
+	default = matching
