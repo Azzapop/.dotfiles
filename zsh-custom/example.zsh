@@ -8,3 +8,4 @@
 # brainstormr=~/Projects/development/planetargon/brainstormr
 # cd $brainstormr
 #
+alias test='echo "test"'
