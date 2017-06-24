@@ -16,6 +16,7 @@ brew install heroku
 brew install rtv
 brew install autoenv
 brew install thefuck
+brew install trash
 
 brew install macvim --with-override-system-vim
 ln -s ~/.dotfiles/.vimrc ~/.vimrc

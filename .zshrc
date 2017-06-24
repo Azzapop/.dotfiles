@@ -54,6 +54,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Path updates
 export PATH="/usr/local/bin:$PATH"
+export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.cabal/bin"
 export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$PATH:`yarn global bin`"

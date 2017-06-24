@@ -4,7 +4,6 @@ alias la='ls -a'
 alias c='clear'
 alias vi="mvim -v"
 alias e='vi'
-alias lol='zsh ~/src/shell_scripts/lol.sh'
 alias heorku="heroku"
 alias bundel="bundle"
 alias dot="bundle exec rspec"
