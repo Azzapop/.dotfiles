@@ -17,6 +17,10 @@ brew install rtv
 brew install autoenv
 brew install thefuck
 brew install trash
+brew install mongodb
+brew install pandoc
+brew install lynx
+brew install redis
 
 brew install macvim --with-override-system-vim
 ln -s ~/.dotfiles/.vimrc ~/.vimrc

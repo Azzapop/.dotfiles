@@ -51,3 +51,5 @@ brew install gpg
 brew cask install java
 
 brew install jq
+
+pip3 install visidata

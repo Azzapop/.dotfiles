@@ -18,6 +18,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
+Plugin 'digitaltoad/vim-pug'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
@@ -35,9 +36,11 @@ Plugin 'eslint/eslint'
 Plugin 'yggdroot/indentline'
 Plugin 'sickill/vim-pasta'
 Plugin 'johngrib/vim-game-snake'
+Plugin 'johngrib/vim-game-code-break'
 Plugin 'roman/golden-ratio'
 Plugin 'json-formatter.vim'
 Plugin 'webfd/vim-scss'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 filetype plugin indent on
@@ -50,7 +53,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
 let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
 
-let g:syntastic_slim_checkers = 'slimrb'
+let g:syntastic_slim_checkers = ['slimrb']
 let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
 
 " let g:airline#extensions#clock#format = '%H:%M:%S'
