@@ -1,1 +1,0 @@
-brew install macvim --with-csope --with-lua --override-system-vim

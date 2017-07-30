@@ -1,0 +1,15 @@
+brew install macvim --with-csope --with-lua --override-system-vim
+brew install rbenv
+brew install node
+brew install yarn
+brew install python3
+brew install fortune
+brew install postgres
+brew install heroku
+brew install rtv
+brew install autoenv
+brew install thefuck
+brew install trash
+brew install mongodb
+brew install lynx
+brew install redis
