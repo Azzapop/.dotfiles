@@ -1,3 +1,5 @@
+
+
 ###The plan
 
 * Directories to categorize files e.g. git, vim, zsh
@@ -53,3 +55,7 @@ brew cask install java
 brew install jq
 
 pip3 install visidata
+
+npm install -g firebase-tools
+
+brew install exa
