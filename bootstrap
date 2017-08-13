@@ -1,6 +1,9 @@
 ## Install brew 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+## Run all install_list
+
+## Link all .sym
 
 ## Old script
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
