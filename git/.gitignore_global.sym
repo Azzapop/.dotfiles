@@ -10,3 +10,7 @@
 /vendor/ruby/
 
 latest*.dump
+
+package-lock.json
+
+/public
