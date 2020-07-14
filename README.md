@@ -1,6 +1,31 @@
+# New system setup steps
+
+1. In the terminal, generate an ssh key for the new user
+
+```
+ssh-keygen
+```
+
+2. Copy your new ssh key to your clipboard
+
+```
+pbcopy < ~/.ssh/id_rsa.pub
+```
+
+For non mac systems you will have to copy the ssh key from the above path using your preferred method
+
+3. Add the new ssh key to your github account at the following url
+
+[https://github.com/settings/ssh/new](https://github.com/settings/ssh/new)
+
+4. Clone the repo
+
+```
+git clone git@github.com:Azzapop/.dotfiles.git
+```
 
 
-###The plan
+### The plan
 
 * Directories to categorize files e.g. git, vim, zsh
 * File extensions based on their use e.g. .sym for symlink, .bev for brew formulas
@@ -59,3 +84,5 @@ pip3 install visidata
 npm install -g firebase-tools
 
 brew install exa
+
+brew install geth

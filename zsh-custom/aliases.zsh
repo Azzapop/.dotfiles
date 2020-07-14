@@ -23,5 +23,7 @@ alias gl='/usr/bin/git log --date-order --graph --pretty=format:'\''%Cred%h%Cres
 
 # Rails aliases
 alias be="bundle exec"
-alias rails="bundle exec rails"
-alias rake="bundle exec rake"
+
+# rust aliases
+alias rrun='rustc $1.rs && ./$1'
+

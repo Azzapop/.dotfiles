@@ -40,7 +40,12 @@ Plugin 'johngrib/vim-game-code-break'
 Plugin 'roman/golden-ratio'
 Plugin 'json-formatter.vim'
 Plugin 'webfd/vim-scss'
+Plugin 'sekel/vim-vue-syntastic'
+Plugin 'posva/vim-vue'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'rust-lang/rust.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 
 call vundle#end()
 filetype plugin indent on
@@ -55,6 +60,21 @@ let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
 
 let g:syntastic_slim_checkers = ['slimrb']
 let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_vue_checkers = ['eslint']
+let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+if matchstr(local_eslint, "^\/\\w") == ''
+    let local_eslint = getcwd() . "/" . local_eslint
+endif
+if executable(local_eslint)
+    let g:syntastic_javascript_eslint_exec = local_eslint
+    let g:syntastic_vue_eslint_exec = local_eslint
+endif
+
+" let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
 
 " let g:airline#extensions#clock#format = '%H:%M:%S'
 " let g:airline#extensions#clock#updatetime = 1000
@@ -101,7 +121,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 " Where a line is over 80 characters long, highlight charcters over the limit.
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%101v.\+/
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
