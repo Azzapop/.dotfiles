@@ -7,10 +7,12 @@
 .env
 
 # Ignore rubygems
-/vendor/ruby/
+vendor/ruby/
 
 latest*.dump
 
-package-lock.json
-
 /public
+
+db/structure.sql
+
+script.zsh

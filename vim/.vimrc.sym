@@ -21,23 +21,23 @@ Plugin 'scrooloose/syntastic'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
-Plugin 'idris-hackers/idris-vim'
+Plugin 'idris-hackers/idris-vim' "syntax highlighting for haskell etc
 Plugin 'slim-template/vim-slim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-endwise'
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'posva/vim-vue'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'enricobacis/vim-airline-clock'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'eslint/eslint'
 Plugin 'yggdroot/indentline'
 Plugin 'sickill/vim-pasta'
-Plugin 'johngrib/vim-game-snake'
 Plugin 'roman/golden-ratio'
-Plugin 'json-formatter.vim'
 Plugin 'webfd/vim-scss'
+Plugin 'quramy/tsuquyomi'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 filetype plugin indent on
@@ -52,9 +52,12 @@ let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
 
 let g:syntastic_slim_checkers = 'slimrb'
 let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+let g:syntastic_typescript_checks=['tsc', 'tslint']
+let g:syntastic_typescript_tsc_fname = ''
 
-" let g:airline#extensions#clock#format = '%H:%M:%S'
-" let g:airline#extensions#clock#updatetime = 1000
+let g:Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 
 if has("persistent_undo")
   set undofile
@@ -96,9 +99,12 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
-" Where a line is over 80 characters long, highlight charcters over the limit.
+" Where a line is over 90 characters long, highlight charcters over the limit.
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%101v.\+/
+
+" add jbuilder syntax highlighting
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -112,8 +118,6 @@ nnoremap <leader>u :UndotreeToggle<CR>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
-
-
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -133,4 +137,11 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " md is markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md set spell
+
+" use jsx highlighting for react folder
+autocmd BufRead ~/src/littlehotelier/app/javascript/*.js setlocal syntax=javascript.jsx
+
+autocmd FileType typescript setlocal completeopt+=menu,preview
+let g:tsuquyomi_completion_preview = 1
+
 colorscheme azzapop

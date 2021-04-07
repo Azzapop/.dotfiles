@@ -39,13 +39,13 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM="$HOME/.dotfiles/zsh-custom"
+ZSH_CUSTOM="$HOME/.zsh-custom"
 
 # Which plugins would you like to load?
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autoenv thefuck rbenv)
+plugins=(git rbenv)
 
 # User configuration
 
@@ -58,6 +58,7 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.cabal/bin"
 export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$PATH:`yarn global bin`"
+export PATH="$PATH:$HOME/src/infrastructure-deploy"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -72,6 +73,12 @@ export LANG=en_US.UTF-8
 # fi
 export EDITOR='vim'
 
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -83,5 +90,18 @@ eval "$(rbenv init -)"
 # Change iterm2 profile. Usage it2prof ProfileName (case sensitive)
 it2prof() { echo -e "\033]50;SetProfile=$1\a" }
 
+# open pr page on github for current branch
+pr () {
+  local repo=`git remote -v | grep -m 1 "(push)" | sed -e "s/.*github.com[:/]\(.*\)\.git.*/\1/"`
+  local branch=`git name-rev --name-only HEAD`
+  echo "... creating pull request for branch \"$branch\" in \"$repo\""
+  open "https://github.com/$repo/pull/new/$branch?expand=1"
+}
+
 echo
 fortune
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/usr/local/opt/libxslt/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+source ~/.autoenv/activate.sh
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

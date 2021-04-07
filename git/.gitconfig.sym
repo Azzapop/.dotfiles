@@ -1,8 +1,8 @@
 [user]
 	name = Azzapop
-	email = aaron.b.hook@gmail.com
+	email = aaron.hook@siteminder.com
 [core]
-	excludesfile = /Users/Aaron/.gitignore_global
+	excludesfile = /Users/aaronhook/.gitignore_global
 	editor = /usr/bin/vim
 [push]
 	defult = simple
